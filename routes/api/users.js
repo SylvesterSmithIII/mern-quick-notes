@@ -9,5 +9,8 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 router.post('/', usersCtrl.create);
 router.post('/login', usersCtrl.login)
 router.get('/check-token', ensureLoggedIn, usersCtrl.checkToken)
+router.get('/notes', ensureLoggedIn, usersCtrl.getNotes)
+router.post('/notes/create', ensureLoggedIn, usersCtrl.addNote)
+router.delete('/notes/delete', ensureLoggedIn, usersCtrl.deleteNote)
 
 module.exports = router;

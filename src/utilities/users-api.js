@@ -13,3 +13,16 @@ export function login(credentials) {
 export function checkToken() {
     return sendRequest(`${BASE_URL}/check-token`);
   }
+
+export function getNotes() {
+  return sendRequest(`${BASE_URL}/notes`);
+}
+
+export function addNote(notesObj) {
+  return sendRequest(`${BASE_URL}/notes/create`, 'POST', notesObj)
+}
+
+export function deleteNote(note) {
+  console.log('here')
+  return sendRequest(`${BASE_URL}/notes/delete`, 'DELETE', note)
+}

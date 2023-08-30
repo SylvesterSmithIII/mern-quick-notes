@@ -50,3 +50,17 @@ export function checkToken() {
       // make it a Date object for more flexibility
       .then(dateStr => new Date(dateStr));
   }
+
+export async function getNotes() {
+    const notes = await usersAPI.getNotes()
+    return notes
+}
+
+export async function addNote(notesObj) {
+    const note = await usersAPI.addNote(notesObj)
+    return note
+}
+
+export async function deleteNote(note) {
+    await usersAPI.deleteNote(note)
+}
